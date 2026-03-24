@@ -9,19 +9,19 @@ export default function TripDetailsPage() {
 
   return (
     <>
-      <h2 className="h1 text-primary">VIAGGIO a {trip.destination}</h2>
+      <h2 className="h1 text-primary">VIAGGIO a {trip?.destination}</h2>
       <h2 className="text-primary">
-        dal {formatDate(trip.startDate)} al {formatDate(trip.endDate)}
+        dal {formatDate(trip?.startDate)} al {formatDate(trip?.endDate)}
       </h2>
       <h3 className="text-secondary">RUBRICA PARTECIPANTI</h3>
 
       <div className="my-5 fw-bold">TODO: FILTRO RICERCA</div>
 
       <ul>
-        {trip.participants.map((participant) => (
-          <Link key={participant.id} to={`${participant.id}`}>
+        {trip?.participants.map((participant) => (
+          <Link key={participant?.id} to={`${participant?.id}`}>
             <li>
-              {participant.firstName} {participant.lastName}
+              {participant?.firstName} {participant?.lastName}
             </li>
           </Link>
         ))}

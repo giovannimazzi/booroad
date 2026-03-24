@@ -12,24 +12,24 @@ export default function ContactDetailsPage() {
 
   return (
     <>
-      <Link to={`/${trip.id}`}>
-        <h2 className="h1 text-primary">VIAGGIO a {trip.destination}</h2>
+      <Link to={`/${trip?.id}`}>
+        <h2 className="h1 text-primary">VIAGGIO a {trip?.destination}</h2>
       </Link>
       <h2 className="text-primary">
-        dal {formatDate(trip.startDate)} al {formatDate(trip.endDate)}
+        dal {formatDate(trip?.startDate)} al {formatDate(trip?.endDate)}
       </h2>
       <h3 className="text-secondary">DETTAGLIO PARTECIPANTE</h3>
       <h4 className="text-info">
-        {participant.firstName} {participant.lastName}
+        {participant?.firstName} {participant?.lastName}
       </h4>
       <p>
-        <strong>email:</strong> {participant.email}
+        <strong>email:</strong> {participant?.email}
       </p>
       <p>
-        <strong>phone:</strong> {participant.phone}
+        <strong>phone:</strong> {participant?.phone}
       </p>
       <p>
-        <strong>taxCode:</strong> {participant.taxCode}
+        <strong>taxCode:</strong> {participant?.taxCode}
       </p>
     </>
   );

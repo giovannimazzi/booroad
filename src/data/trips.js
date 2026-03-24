@@ -455,8 +455,6 @@ const trips = [
       },
     ],
   },
-
-  // 🔵 FUTURE
   {
     id: 9,
     destination: "Tokyo",

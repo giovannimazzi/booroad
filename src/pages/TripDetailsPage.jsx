@@ -4,6 +4,7 @@ import { useTrips } from "../context/TripContext";
 import { formatDate } from "../utils/utilities";
 import ParticipantCard from "../components/PartecipantCard";
 import { FaArrowLeft, FaMagnifyingGlass } from "react-icons/fa6";
+import { FaCirclePlus } from "react-icons/fa6";
 
 export default function TripDetailsPage() {
   const { idT } = useParams();
@@ -40,9 +41,14 @@ export default function TripDetailsPage() {
 
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h3 className="fw-bold m-0 text-secondary">Rubrica Partecipanti</h3>
-        <span className="badge bg-secondary rounded-pill">
-          {filteredParticipants?.length} presenti
-        </span>
+        <div className="d-flex  align-items-center gap-2">
+          <span className="badge bg-secondary rounded-pill px-3">
+            {filteredParticipants?.length} presenti
+          </span>
+          <Link to={`/${trip.id}/add-participant`}>
+            <FaCirclePlus className="text-success fs-2" />
+          </Link>
+        </div>
       </div>
 
       {/* BARRA DI RICERCA */}

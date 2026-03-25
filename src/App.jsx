@@ -7,21 +7,32 @@ import TripDetailsPage from "./pages/TripDetailsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { TripProvider } from "./context/TripContext";
 import AddNewTripPage from "./pages/AddNewTripPage";
+import AddNewParticipantPage from "./pages/AddNewParticipantPage";
 
 export default function App() {
-  return (
-    <TripProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<DefaultLayout />}>
-            <Route index Component={HomePage} />
-            <Route path="/:idT" Component={TripDetailsPage} />
-            <Route path="/:idT/:idC" Component={ContactDetailsPage} />
-            <Route path="/add-trip" Component={AddNewTripPage}></Route>
-            <Route path="*" Component={NotFoundPage} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </TripProvider>
-  );
+    return (
+        <TripProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<DefaultLayout />}>
+                        <Route index Component={HomePage} />
+                        <Route path="/:idT" Component={TripDetailsPage} />
+                        <Route
+                            path="/:idT/:idC"
+                            Component={ContactDetailsPage}
+                        />
+                        <Route
+                            path="/:idT/add-participant"
+                            Component={AddNewParticipantPage}
+                        ></Route>
+                        <Route
+                            path="/add-trip"
+                            Component={AddNewTripPage}
+                        ></Route>
+                        <Route path="*" Component={NotFoundPage} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </TripProvider>
+    );
 }

@@ -21,8 +21,17 @@ export default function TripDetailsPage() {
 
   // LOGICA DEL FILTRO
   const filteredParticipants = trip.participants?.filter((p) => {
+    const id = `${p?.id}`;
     const fullName = `${p?.firstName} ${p?.lastName}`.toLowerCase();
-    return fullName?.includes(searchTerm.toLowerCase().trim());
+    const phone = `${p?.phone}`.trim();
+    const taxCode = p?.taxCode.toLowerCase();
+    const searchedTerm = searchTerm.toLowerCase().trim();
+    return (
+      id?.includes(searchedTerm) ||
+      fullName?.includes(searchedTerm) ||
+      phone?.includes(searchedTerm) ||
+      taxCode?.includes(searchedTerm)
+    );
   });
 
   return (
@@ -59,7 +68,7 @@ export default function TripDetailsPage() {
         <input
           type="text"
           className="form-control border-start-0 ps-0"
-          placeholder="Cerca per nome o cognome..."
+          placeholder="Cerca per nome, cognome, id, numero di telefono o codice fiscale..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />

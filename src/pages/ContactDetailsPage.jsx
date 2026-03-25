@@ -49,7 +49,7 @@ export default function ContactDetailsPage() {
                 {participant?.firstName} {participant?.lastName}
               </h2>
               <p className="text-uppercase small fw-bold mb-0 opacity-75">
-                Scheda Partecipante
+                Scheda Partecipante - #{participant?.id}
               </p>
             </div>
 
@@ -59,37 +59,37 @@ export default function ContactDetailsPage() {
               </h5>
 
               <div className="d-flex align-items-center mb-3">
-                <div className="btn btn-light rounded-circle me-3">
-                  <FaEnvelope className="text-primary" />
-                </div>
+                <a
+                  href={`mailto:${participant?.email}`}
+                  className="text-dark fw-bold text-decoration-none"
+                >
+                  <div className="btn btn-light rounded-circle me-3">
+                    <FaEnvelope className="text-primary" />
+                  </div>
+                </a>
                 <div>
                   <small className="text-muted d-block">Email</small>
-                  <a
-                    href={`mailto:${participant?.email}`}
-                    className="text-dark fw-bold text-decoration-none"
-                  >
-                    {participant?.email}
-                  </a>
+                  <strong>{participant?.email}</strong>
                 </div>
               </div>
 
               <div className="d-flex align-items-center mb-3">
-                <div className="btn btn-light rounded-circle me-3">
-                  <FaPhone className="text-success" />
-                </div>
+                <a
+                  href={`tel:${participant?.phone}`}
+                  className="text-dark fw-bold text-decoration-none"
+                >
+                  <div className="btn btn-light rounded-circle me-3">
+                    <FaPhone className="text-success" />
+                  </div>
+                </a>
                 <div>
                   <small className="text-muted d-block">Telefono</small>
-                  <a
-                    href={`tel:${participant?.phone}`}
-                    className="text-dark fw-bold text-decoration-none"
-                  >
-                    {participant?.phone}
-                  </a>
+                  <strong>{participant?.phone}</strong>
                 </div>
               </div>
 
               <div className="d-flex align-items-center mb-4">
-                <div className="btn btn-light rounded-circle me-3">
+                <div className="btn btn-light rounded-circle me-3 not-hover">
                   <FaIdCard className="text-danger" />
                 </div>
                 <div>

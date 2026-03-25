@@ -2,3 +2,9 @@
   max-width: 500px;
   margin: 0 auto;
 }
+
+.not-hover:hover {
+  cursor: default;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}

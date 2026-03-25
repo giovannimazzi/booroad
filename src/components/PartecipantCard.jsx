@@ -9,7 +9,9 @@ export default function ParticipantCard({ participant }) {
             <h5 className="mb-0 fw-bold text-dark">
               {participant?.firstName} {participant?.lastName}
             </h5>
-            <small className="text-muted text-uppercase">Partecipante</small>
+            <small className="text-muted text-uppercase">
+              Partecipante - #{participant?.id}
+            </small>
           </div>
           <Link
             to={`${participant?.id}`}
